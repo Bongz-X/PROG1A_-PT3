@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="poe.MessageTest" time="0.213" tests="10" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="17"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="C:\Users\bongu\Desktop\PROG1A_PT2\PROG1A_POE_Part 2\target\test-classes;C:\Users\bongu\Desktop\PROG1A_PT2\PROG1A_POE_Part 2\target\classes;C:\Users\bongu\.m2\repository\org\junit\jupiter\junit-jupiter\5.10.0\junit-jupiter-5.10.0.jar;C:\Users\bongu\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.0\junit-jupiter-api-5.10.0.jar;C:\Users\bongu\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\bongu\.m2\repository\org\junit\platform\junit-platform-commons\1.10.0\junit-platform-commons-1.10.0.jar;C:\Users\bongu\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\bongu\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.0\junit-jupiter-params-5.10.0.jar;C:\Users\bongu\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.0\junit-jupiter-engine-5.10.0.jar;C:\Users\bongu\.m2\repository\org\junit\platform\junit-platform-engine\1.10.0\junit-platform-engine-1.10.0.jar;C:\Users\bongu\.m2\repository\com\google\code\gson\gson\2.10.1\gson-2.10.1.jar;"/>
+    <property name="java.vm.vendor" value="Eclipse Adoptium"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://adoptium.net/"/>
+    <property name="user.timezone" value="Africa/Johannesburg"/>
+    <property name="os.name" value="Windows 11"/>
+    <property name="java.vm.specification.version" value="17"/>
+    <property name="user.country" value="ZA"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Eclipse Adoptium\jdk-17.0.18.8-hotspot\bin"/>
+    <property name="sun.java.command" value="C:\Users\bongu\AppData\Local\Temp\surefire4333352277802558703\surefirebooter-20260506234146752_3.jar C:\Users\bongu\AppData\Local\Temp\surefire4333352277802558703 2026-05-06T23-41-45_670-jvmRun1 surefire-20260506234146752_1tmp surefire_0-20260506234146752_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="C:\Users\bongu\Desktop\PROG1A_PT2\PROG1A_POE_Part 2\target\test-classes;C:\Users\bongu\Desktop\PROG1A_PT2\PROG1A_POE_Part 2\target\classes;C:\Users\bongu\.m2\repository\org\junit\jupiter\junit-jupiter\5.10.0\junit-jupiter-5.10.0.jar;C:\Users\bongu\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.0\junit-jupiter-api-5.10.0.jar;C:\Users\bongu\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\bongu\.m2\repository\org\junit\platform\junit-platform-commons\1.10.0\junit-platform-commons-1.10.0.jar;C:\Users\bongu\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\bongu\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.0\junit-jupiter-params-5.10.0.jar;C:\Users\bongu\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.0\junit-jupiter-engine-5.10.0.jar;C:\Users\bongu\.m2\repository\org\junit\platform\junit-platform-engine\1.10.0\junit-platform-engine-1.10.0.jar;C:\Users\bongu\.m2\repository\com\google\code\gson\gson\2.10.1\gson-2.10.1.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\bongu"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2026-01-20"/>
+    <property name="java.home" value="C:\Program Files\Eclipse Adoptium\jdk-17.0.18.8-hotspot"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="C:\Users\bongu\Desktop\PROG1A_PT2\PROG1A_POE_Part 2"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="C:\Users\bongu\AppData\Local\Temp\surefire4333352277802558703\surefirebooter-20260506234146752_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="17.0.18+8"/>
+    <property name="user.name" value="bongu"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Temurin-17.0.18+8"/>
+    <property name="maven.ext.class.path" value="C:\Users\bongu\.vscode\extensions\oracle.oracle-java-25.1.0\nbcode\java\maven-nblib\netbeans-eventspy.jar"/>
+    <property name="localRepository" value="C:\Users\bongu\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/adoptium/adoptium-support/issues"/>
+    <property name="java.io.tmpdir" value="C:\Users\bongu\AppData\Local\Temp\"/>
+    <property name="java.version" value="17.0.18"/>
+    <property name="user.dir" value="C:\Users\bongu\Desktop\PROG1A_PT2\PROG1A_POE_Part 2"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="native.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Eclipse Adoptium\jdk-17.0.18.8-hotspot\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Users\bongu\AppData\Local\Programs\Microsoft VS Code;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files\Eclipse Adoptium\jdk-17.0.18.8-hotspot\bin;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64_win\compiler;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files\dotnet\;C:\Users\bongu\AppData\Local\Microsoft\WindowsApps;C:\Users\bongu\AppData\Roaming\npm;C:\Users\bongu\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\bongu\AppData\Local\GitHubDesktop\bin;C:\Users\bongu\AppData\Local\JetBrains\Toolbox\scripts;;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Eclipse Adoptium"/>
+    <property name="java.vm.version" value="17.0.18+8"/>
+    <property name="java.specification.maintenance.version" value="1"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="61.0"/>
+  </properties>
+  <testcase name="testRecipientNumberInvalid" classname="poe.MessageTest" time="0.017">
+    <system-out><![CDATA[Recipient Number is Invalid: false, Cellphone number is incorrectly formatted or does not contain an international code.Please correct the number and try again.
+]]></system-out>
+  </testcase>
+  <testcase name="testDiscardMessage" classname="poe.MessageTest" time="0.005">
+    <system-out><![CDATA[Message Discard Result: Press 0 to delete message.
+]]></system-out>
+  </testcase>
+  <testcase name="testStoreMessage" classname="poe.MessageTest" time="0.003">
+    <system-out><![CDATA[Message Store Result: Message successfully stored.
+]]></system-out>
+  </testcase>
+  <testcase name="testSendMessage" classname="poe.MessageTest" time="0.006">
+    <system-out><![CDATA[Message Sent Result: Message successfully sent.
+]]></system-out>
+  </testcase>
+  <testcase name="testMessageLengthInvalid" classname="poe.MessageTest" time="0.043">
+    <system-out><![CDATA[Test Message Length Invalid: false, Message exceeds 250 characters by 10 characters, please reduce the size.
+]]></system-out>
+  </testcase>
+  <testcase name="testMessageLengthValid" classname="poe.MessageTest" time="0.012">
+    <system-out><![CDATA[Test Message Length Valid: true, Message ready to send.
+]]></system-out>
+  </testcase>
+  <testcase name="testRecipientNumberValid" classname="poe.MessageTest" time="0.027">
+    <system-out><![CDATA[Recipient Number is Valid: true, Cellphone number successfully captured.
+]]></system-out>
+  </testcase>
+  <testcase name="testMessageHashCreated" classname="poe.MessageTest" time="0.019">
+    <system-out><![CDATA[Generated Hash test 1: 00:HITONIGHT
+]]></system-out>
+  </testcase>
+  <testcase name="testMessageIDGenerated" classname="poe.MessageTest" time="0.007">
+    <system-out><![CDATA[Generated Message ID: 3144534211
+]]></system-out>
+  </testcase>
+  <testcase name="testMultipleMessageHashCreated" classname="poe.MessageTest" time="0.002">
+    <system-out><![CDATA[Generated Hash: 00:HITONIGHT
+Generated Hash: 01:HIPAYMENT
+]]></system-out>
+  </testcase>
+</testsuite>
