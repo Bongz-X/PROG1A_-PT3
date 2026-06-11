@@ -61,10 +61,10 @@ public class MessageTest {
     //Message Hash Test case 1
     @Test
     public void testMessageHashCreated(){
-        Messages msg = new Messages ("00ABCDEF31", 1, "+27718693002", "Hi Mike, can you join us for dinner tonight?");
+        Messages msg = new Messages ("00ABCDEF31", 0, "+27718693002", "Hi Mike, can you join us for dinner tonight?");
 
         String hash = msg.createMessageHash();
-        String expectedResult = "00:HITONIGHT";
+        String expectedResult = "00:0:HITONIGHT";
 
         System.out.println("Generated Hash test 1: " + hash);
         assertEquals(expectedResult, hash);

@@ -70,7 +70,7 @@ public Messages(String messageID, int messageNumber, String recipient, String me
 
         String lastWord = words[words.length - 1].replaceAll("[^a-zA-Z]", ""); // Remove punctuation "?"
 
-        return(firstTwo + ":" + (firstWord + lastWord).toUpperCase());
+        return firstTwo + ":" + (firstWord + lastWord).toUpperCase();
     }
 
 //Displaying messages in the correct order & format

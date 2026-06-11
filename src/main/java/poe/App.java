@@ -34,7 +34,7 @@ public class App
                 boolean isValid;
 
                 do {
-                    System.out.println("Please enter your username (Contains _ and is a max of 5 characers long) ");
+                    System.out.println("Please enter your username (Contains _ and is a max of 5 characters long) ");
                     String username = input.nextLine();
 
                     System.out.println("Please enter your password (8 characters long, contains a capital letter, a number and a special character)");
@@ -82,14 +82,14 @@ public class App
                     }
                 } while (!isValid);
 
-                //Final registration result confriming details are correct and user is registered
+                //Final registration result confirming details are correct and user is registered
                 System.out.println("Above conditions have been met. User successfully registered.");
                 break;
 
 
                 //Login Phase
 
-                //Letting user know they can't login without registering first
+                //Letting user know they can't log in without registering first
                 case 2:
                     if (user == null){
                         System.out.println("No user registered. Register first before attempting to login!");
@@ -182,9 +182,6 @@ public class App
                 
                 //Arrays for stored messages from JSON File
                 ArrayList<Messages> storedMessages = MessageStore.loadMessages();
-                
-                //Counter to measure all messages being processed
-                int totalProcessed = 0;
 
                 for (int m = 1; m <= total; m++){
                     System.out.println("\n---Message " + m + "---");
@@ -196,8 +193,11 @@ public class App
 
                     Messages msg = new Messages(m, recipient, messageText);
 
-                //Every message attempt is counted
-                    totalProcessed ++;
+                //Recipient Validation
+                    if (!msg.checkRecipientCell()) {
+                        System.out.println("Cell phone number is incorrectly formatted or does not contain an international code.");
+                        continue;
+                    }
 
                 //Ensure message length is validated first before being counted
                     if (!msg.checkMessageText()){
@@ -246,7 +246,6 @@ public class App
                     }
 
                     //Displaying total messages processed & created at the end of the loop
-                    System.out.println("\nTotal messages processed: " + totalProcessed);
-                    System.out.println("Total messages created: " + Messages.returnTotalMessages());
+                    System.out.println("\nTotal messages sent: " + Messages.returnTotalMessages());
                 }
             }
