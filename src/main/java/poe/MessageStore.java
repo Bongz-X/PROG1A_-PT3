@@ -10,7 +10,7 @@ public class MessageStore{
     
     //Declarations for MessageStore
     private static final String FILE_NAME = "messages.json";
-    private static Gson gson = new Gson();
+    private static final Gson gson = new Gson();
     
     //Method to save messages to a JSON file
     public static void saveMessages(ArrayList<Messages> messages) {

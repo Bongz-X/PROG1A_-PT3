@@ -13,6 +13,10 @@ public class Messages{
 ///Total message counter
 private static int totalMessages = 0;
 
+//Constructor to help with JSON deserialization
+    public Messages (){
+
+    }
 //Constructor for Messages
     public Messages(int messageNumber, String recipient, String messageText) {
         this.messageID = generateMessageID();
@@ -42,7 +46,7 @@ public Messages(String messageID, int messageNumber, String recipient, String me
 
 //Check messageID length
     public boolean checkMessageID(){
-        return messageID.length() <= 10;
+        return messageID.length() == 10;
     }
 
 //Check recipient cell format
@@ -64,13 +68,13 @@ public Messages(String messageID, int messageNumber, String recipient, String me
         //First two digits of MessageID
         String firstTwo =  messageID.substring(0, 2);
 
-        //First && Last words of messageID
+        //First && Last words of messageText
         String [] words = messageText.split(" ");
         String firstWord = words[0];
 
         String lastWord = words[words.length - 1].replaceAll("[^a-zA-Z]", ""); // Remove punctuation "?"
 
-        return firstTwo + ":" + (firstWord + lastWord).toUpperCase();
+        return firstTwo + ":" + messageNumber + ":" + (firstWord + lastWord).toUpperCase();
     }
 
 //Displaying messages in the correct order & format

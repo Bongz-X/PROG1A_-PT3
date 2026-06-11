@@ -4,6 +4,13 @@ import java.util.Scanner;
 import java.util.ArrayList;
 public class App
 {
+//sentMessages Array
+    private static ArrayList<Messages> sentMessages = new ArrayList<>();
+
+//disregardedMessages Array
+    private static ArrayList<Messages> disregardedMessages = new ArrayList<>();
+
+//main method
     public static void main( String[] args )
     {
 
@@ -159,7 +166,15 @@ public class App
                        break;
 
                     case 2:
-                        System.out.println("Coming Soon.");
+                        if (sentMessages.isEmpty()){
+                            System.out.println("No messages have been sent.");
+                        }
+                        else {
+                            for (Messages msg : sentMessages){
+                                msg.printMessages();
+                                System.out.println();
+                            }
+                        }
                         break;
 
                     case 3:
@@ -219,15 +234,17 @@ public class App
                 //Displaying Menu option results
                     switch (messageOption) {
                         case 1:
-                            System.out.println(msg.SentMessage(1));
-                            msg.printMessages();
-                            break;
+                        sentMessages.add(msg);
+                        System.out.println(msg.SentMessage(1));
+                        msg.printMessages();
+                        break;
 
                         case 2:
                             System.out.println("Press 0 to delete message.");
                             int confirm = input.nextInt();
                             input.nextLine();
                             if (confirm == 0) {
+                                disregardedMessages.add(msg);
                                 System.out.println("Message deleted.");
                             } else{
                                 System.out.println("Message is not discarded.");
