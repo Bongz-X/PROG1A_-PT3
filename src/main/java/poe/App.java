@@ -159,13 +159,14 @@ public class App
                 //Looping QuickChat Menu
                 int MessageOptions = 0;
 
-                while (MessageOptions != 4) {
+                while (MessageOptions != 5) {
                     System.out.println("---QuickChat Menu---");
                     System.out.println("\nPlease select an option:");
                     System.out.println("1. Send a message");
                     System.out.println("2. Show recently sent messages");
                     System.out.println("3. Stored Messages");
-                    System.out.println("4. Exit");
+                    System.out.println("4. Show discarded messages");
+                    System.out.println("5. Exit");
 
                     MessageOptions = input.nextInt();
                     input.nextLine();
@@ -192,6 +193,10 @@ public class App
                         break;
 
                     case 4:
+                        displayDiscardedMessages();
+                        break;
+
+                    case 5:
                         System.out.println("Exiting QuickChat.");
                         break;
 
@@ -448,8 +453,16 @@ public class App
                         }
                     }
                     //Displaying DiscardedMessages
-                    public static void displayDiscardedMessages(){
+                    public static void displayDiscardedMessages() {
 
-                    System.out.println("No discarded ")
+                        System.out.println("\n-- Discarded Messages ---");
+                        if (disregardedMessages.isEmpty()) {
+                            System.out.println("No discarded messages.");
+                            return;
+                        }
+                        for (Messages msg : disregardedMessages) {
+                            msg.printMessages();
+                            System.out.println("---------------------------------");
+                        }
                     }
             }
