@@ -278,4 +278,77 @@ public class App
                     //Displaying total messages processed & created at the end of the loop
                     System.out.println("\nTotal messages sent: " + Messages.returnTotalMessages());
                 }
+
+                //Creating Stored Messages Menu
+                    public static void storedMessagesMenu(Scanner input){
+
+                    ArrayList<Messages> storedMessages = MessageStore.loadMessages();
+
+                    int choice;
+                    do {
+
+                        //Stored Menu Options
+                        System.out.println("\n--- Stored Messages Menu ---");
+                        System.out.println("1. Display Sender and Recipient");
+                        System.out.println("2. Display Longest Message");
+                        System.out.println("3. Search by Message ID");
+                        System.out.println("4. Search by Recipient");
+                        System.out.println("5. Delete by Message Hash");
+                        System.out.println("6.Full Report");
+                        System.out.println("7.Exit");
+
+                        choice = input.nextInt();
+                        input.nextLine();
+
+                        //Displaying & entering details
+                        switch (choice) {
+
+                            case 1:
+                                displaySendersAndRecipients(storedMessages);
+                                break;
+
+                            case 2:
+                                displayLongestMessage(storedMessages);
+                                break;
+
+                            case 3:
+                                System.out.println("Enter the Message ID: ");
+
+                                String messageID = input.nextLine();
+                                searchByMessageID(storedMessages, messageID);
+                                break;
+
+                            case 4:
+                                System.out.println("Enter the Recipient's Number: ");
+
+                                String recipient = input.nextLine();
+                                searchByRecipient(StoredMessages, recipient);
+
+                            case 5:
+                                System.out.println("Enter Message Hash: ");
+
+                                String hash = input.nextLine();
+                                deleteByHash(storedMessages, hash);
+                                break;
+
+                            case 6:
+                                displayFullReport(storedMessages);
+                                break;
+
+                            case 7:
+                                System.out.println("Exiting menu.");
+                                break;
+
+                            default:
+                                System.out.println("Invalid option. Please try again and select the correct option.");
+
+                        }
+
+                    } while (choice != 7);
+
+
+                        }
+                    }
+                    }
+
             }
