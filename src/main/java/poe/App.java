@@ -4,6 +4,10 @@ import java.util.Scanner;
 import java.util.ArrayList;
 public class App
 {
+
+//Storing a userNumber for user who has logged into the system
+    private static String currentUserNumber;
+
 //sentMessages Array
     private static ArrayList<Messages> sentMessages = new ArrayList<>();
 
@@ -117,6 +121,10 @@ public class App
                 boolean loginSuccess = user.loginUser(enteredUsername, enteredPassword, enteredCellPhone);
 
                 if (loginSuccess){
+
+                //Assigning userNumber to CellPhone
+                    currrentUserNumber = enteredCellPhone;
+
                     System.out.println("Welcome back to QuickChat.");
 
                 //Displaying QuickChat Menu
@@ -150,12 +158,13 @@ public class App
                 //Looping QuickChat Menu
                 int MessageOptions = 0;
 
-                while (MessageOptions != 3) {
+                while (MessageOptions != 4) {
                     System.out.println("---QuickChat Menu---");
                     System.out.println("\nPlease select an option:");
                     System.out.println("1. Send a message");
                     System.out.println("2. Show recently sent messages");
-                    System.out.println("3. Exit");
+                    System.out.println("3. Stored Messages");
+                    System.out.println("4. Exit");
 
                     MessageOptions = input.nextInt();
                     input.nextLine();
@@ -178,6 +187,10 @@ public class App
                         break;
 
                     case 3:
+                        StoredMessagesMenu(input);
+                        break;
+
+                    case 4:
                         System.out.println("Exiting QuickChat.");
                         break;
 

@@ -120,5 +120,9 @@ public static int returnTotalMessages(){
     public String getMessageText(){
         return messageText;
     }
+    public String getMessageHash(){
+        return createMessageHash();
+    }
+
 
 }
