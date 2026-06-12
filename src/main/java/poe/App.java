@@ -1,5 +1,6 @@
 package poe;
 
+import javax.swing.plaf.PanelUI;
 import java.util.Scanner;
 import java.util.ArrayList;
 public class App
@@ -19,7 +20,7 @@ public class App
     {
 
     //Registration of User details
-    
+
     //Scanner to allow user input
     try (Scanner input = new Scanner(System.in)) {
         Login user = null;
@@ -130,7 +131,7 @@ public class App
                 //Displaying QuickChat Menu
                     showQuickChatMenu(input);
                 }
-  
+
                 //Login unsuccessful message
                 else {
                     System.out.println("Login unsuccessful. Please check your credentials and try again.");
@@ -168,7 +169,7 @@ public class App
 
                     MessageOptions = input.nextInt();
                     input.nextLine();
-                
+
                 switch (MessageOptions) {
                     case 1:
                        sendMessages (input);
@@ -207,7 +208,7 @@ public class App
                     System.out.print("How many messages would you like to send? ");
                     int total = input.nextInt ();
                     input.nextLine();
-                
+
                 //Arrays for stored messages from JSON File
                 ArrayList<Messages> storedMessages = MessageStore.loadMessages();
 
@@ -243,7 +244,7 @@ public class App
                 //Allowing user to select option for Message menu
                     int messageOption = input.nextInt();
                     input.nextLine();
-                
+
                 //Displaying Menu option results
                     switch (messageOption) {
                         case 1:
@@ -345,10 +346,104 @@ public class App
                         }
 
                     } while (choice != 7);
+                }
 
+                //Adding Array to display Senders & Recipients stored messages
+                    public static void displaySendersAndRecipients(ArrayList<Messages> storedMessages){
+
+                    for (Messages msg : storedMessages){
+                        System.out.println("Sender: " + currentUserNumber);
+                        System.out.println("Recipient: " + msg.getRecipient());
+                        System.out.println();
+
+                    }
+                }
+
+                //Array to display Longest Message
+                    public static void displayLongestMessage(ArrayList<Messages> storedMessages){
+
+                    if (storedMessages.isEmpty()) {
+                        System.out.println("No stored messages.");
+                        return;
+                    }
+                    Messages longest = storedMessages.get(0);
+                    for (Messages msg : storedMessages){
+                        if(msg.getMessageText().length()>longest.getMessageText().length()){
+                            longest = msg;
+                        }
+                    }
+
+                    //Displaying Longest stored Message
+                        System.out.println("\nLongest Stored Message: ");
+                        longest.printMessages();
+                    }
+
+                    //Array to Search by MessageID
+                    public static void searchByMessageID(ArrayList<Messages> storedMessages, String messageID) {
+
+                    //Displaying Recipient & Message
+                    for(Messages msg : storedMessages){
+                        if (msg.getMessageID().equals(messageID))
+                        {
+                            System.out.println("Recipient: " + msg.getRecipient());
+
+                            System.out.println("Message: " + msg.getMessageText());
+
+                            return;
+                        }
+                    }
+                    //Displaying Message not found
+                        System.out.println("Message not found.");
+                    }
+
+                    //Array to Search by Recipient
+                    public static void searchByRecipient(ArrayList<Messages> storedMessages, String recipient){
+
+                        boolean found = false;
+
+                    for (Messages msg : storedMessages){
+                        if (msg.getRecipient().equals(recipient)) {
+
+                            msg.printMessages();
+
+                            found = true;
+                        }
+                    }
+                    //Display what happen happens if no recipient is found
+                    if (!found){
+                        System.out.println("No messages found.");
+                    }
+                }
+
+                    //Array to delete messages using message Hash
+                    public static void deleteByHash (ArrayList<Messages> storedMessages, String hash){
+
+                        for(int i = 0; i < storedMessages.size(); i++){
+                            if(storedMessages.get(i).getMessageHash().equals(hash)){
+
+                                storedMessages.remove(i);
+
+                                MessageStore.saveMessages(storedMessages);
+
+                                System.out.println("Message deleted.");
+                                return;
+                            }
+                        }
+                        //Displaying message for hash not being found
+                        System.out.println("Message Hash has not been found.");
+                    }
+                    //Arrays to display Full Report
+                    public static void displayFullReport(ArrayList<Messages> storedMessages){
+
+                    //Displays Full Report Title
+                        System.out.println("\n--- Stored Message Full Report ---");
+
+                        for(Messages msg : StoredMessages){
+                            msg.printMessages();
+
+                            //Separates each report for better user experience
+                            System.out.println("-------------------------------------");
 
                         }
                     }
-                    }
-
             }
