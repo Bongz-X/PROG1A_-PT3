@@ -137,4 +137,19 @@ public class MessageTest {
         System.out.println("Message Store Result: " + actualResult);
         assertEquals(expectedResult, actualResult);
     }
+    //Test for Sent Messages Arrays being correctly populated
+    @Test
+    public void testSentMessagesArrayCorrectlyPopulated(){
+        ArrayList<Messages> sentMessages = new ArrayList<>();
+
+        sentMessages.add(new Messages("0000000001",1,"+27834557896","Did you get the cake?"));
+
+        sentMessages.add (new Messages("0000000004",4,"0838884567","It is dinner time!"));
+
+        String expectedResult = "Did you get the cake?, It is dinner time!";
+
+        String actualResult = sentMesssages.get(0).getMessageText() + ", " + sentMessages.get(1).getMessageText();
+
+        assertEquals(expectedResult, actualResult);
+    }
 }
