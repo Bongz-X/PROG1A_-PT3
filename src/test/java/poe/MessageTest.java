@@ -150,7 +150,7 @@ public class MessageTest {
 
         String expectedResult = "Did you get the cake?, It is dinner time!";
 
-        String actualResult = sentMesssages.get(0).getMessageText() + ", " + sentMessages.get(1).getMessageText();
+        String actualResult = sentMessages.get(0).getMessageText() + ", " + sentMessages.get(1).getMessageText();
 
         assertEquals(expectedResult, actualResult);
     }
@@ -167,7 +167,7 @@ public class MessageTest {
 
         messages.add(new Messages("0000000004", 4, "0838884567", "It is dinner time!"));
 
-        Messages longest = message.get(0);
+        Messages longest = messages.get(0);
 
         for(Messages msg : messages){
             if (msg.getMessageText().length() > longest.getMessageText().length()){
@@ -194,7 +194,7 @@ public class MessageTest {
     //test for searching all messages for a particular recipient
     @Test
     public void testSearchByRecipient () {
-        ArrayList<Messagess> messages = new ArrayList<>();
+        ArrayList<Messages> messages = new ArrayList<>();
 
         messages.add(new Messages("0000000002", 2, "+27838884567", "Where are you? You are late! I have asked you to be on time."));
 
@@ -204,7 +204,7 @@ public class MessageTest {
 
         for(Messages msg : messages){
             if(msg.getRecipient().equals("+27838884567")){
-                results.append(msg.getMessageText()).append("");
+                results.append(msg.getMessageText()).append(" ");
             }
         }
         String expectedResult = "Where are you? You are late! I have asked you to be on time. Ok, I am leaving without you.";
@@ -213,6 +213,7 @@ public class MessageTest {
 
         }
         //Test for Deleting message using a Message hash
+        @Test
         public void testDeleteMessageUsingHash(){
         ArrayList<Messages> messages = new ArrayList<>();
 
@@ -223,6 +224,7 @@ public class MessageTest {
         String deletedMessage = msg2.getMessageText();
 
         messages.remove (msg2);
+        assertEquals(0, messages.size());
 
         String expectedResult = "Where are you? You are late! I have asked you to be on time. Successfully deleted.";
 
@@ -232,7 +234,7 @@ public class MessageTest {
         }
         //Test for displaying Report
         @Test
-        Public void testDisplayReport(){
+        public void testDisplayReport(){
         Messages msg = new Messages("0000000001", 1, "+27834557896", "Did you get the cake?");
 
         String report = "Hash: " + msg.createMessageHash() + ", Recipient: " + msg.getRecipient() + ", Message: " + msg.getMessageText();
