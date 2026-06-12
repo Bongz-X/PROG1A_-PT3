@@ -226,9 +226,9 @@ public class MessageTest {
         messages.remove (msg2);
         assertEquals(0, messages.size());
 
-        String expectedResult = "Where are you? You are late! I have asked you to be on time. Successfully deleted.";
+        String expectedResult = "Message \"Where are you? You are late! I have asked you to be on time.\" Successfully deleted.";
 
-        String actualResult = deletedMessage + " Successfully deleted.";
+        String actualResult = "Message \"" + deletedMessage + "\" Successfully deleted.";
 
         assertEquals(expectedResult, actualResult);
         }
