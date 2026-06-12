@@ -1,6 +1,6 @@
 package poe;
 
-import javax.swing.plaf.PanelUI;
+
 import java.util.Scanner;
 import java.util.ArrayList;
 public class App
@@ -10,10 +10,10 @@ public class App
     private static String currentUserNumber;
 
 //sentMessages Array
-    private static ArrayList<Messages> sentMessages = new ArrayList<>();
+    private static final ArrayList<Messages> sentMessages = new ArrayList<>();
 
 //disregardedMessages Array
-    private static ArrayList<Messages> disregardedMessages = new ArrayList<>();
+    private static final ArrayList<Messages> disregardedMessages = new ArrayList<>();
 
 //main method
     public static void main( String[] args )
@@ -124,7 +124,7 @@ public class App
                 if (loginSuccess){
 
                 //Assigning userNumber to CellPhone
-                    currrentUserNumber = enteredCellPhone;
+                    currentUserNumber = enteredCellPhone;
 
                     System.out.println("Welcome back to QuickChat.");
 
@@ -188,7 +188,7 @@ public class App
                         break;
 
                     case 3:
-                        StoredMessagesMenu(input);
+                        storedMessagesMenu(input);
                         break;
 
                     case 4:
@@ -295,8 +295,8 @@ public class App
                         System.out.println("3. Search by Message ID");
                         System.out.println("4. Search by Recipient");
                         System.out.println("5. Delete by Message Hash");
-                        System.out.println("6.Full Report");
-                        System.out.println("7.Exit");
+                        System.out.println("6. Full Report");
+                        System.out.println("7. Exit");
 
                         choice = input.nextInt();
                         input.nextLine();
@@ -323,7 +323,8 @@ public class App
                                 System.out.println("Enter the Recipient's Number: ");
 
                                 String recipient = input.nextLine();
-                                searchByRecipient(StoredMessages, recipient);
+                                searchByRecipient(storedMessages, recipient);
+                                break;
 
                             case 5:
                                 System.out.println("Enter Message Hash: ");
@@ -438,12 +439,17 @@ public class App
                     //Displays Full Report Title
                         System.out.println("\n--- Stored Message Full Report ---");
 
-                        for(Messages msg : StoredMessages){
+                        for(Messages msg : storedMessages){
                             msg.printMessages();
 
                             //Separates each report for better user experience
                             System.out.println("-------------------------------------");
 
                         }
+                    }
+                    //Displaying DiscardedMessages
+                    public static void displayDiscardedMessages(){
+
+                    System.out.println("No discarded ")
                     }
             }
