@@ -242,5 +242,18 @@ public class MessageTest {
         String expectedResult = "Hash: " + msg.createMessageHash() + ", Recipient: " + "+27834557896" + ", Message: " + "Did you get the cake?";
 
         assertEquals(expectedResult, report);
+        }
+        //Testing messageID length
+        @Test
+        public void testMessageIDLength(){
+        Messages msg = new Messages ("1234567890", 1, "+27718694548", "Hello");
+        assertTrue (msg.checkMessageID());
+        }
+        //Test for getMessageNumber
+        @Test
+        public void testGetMessageNumber(){
+        Messages msg = new Messages ("1234567890", 4, "+27718694548", "Hello");
+        assertEquals (4, msg.getMessageNumber());
     }
+
 }
