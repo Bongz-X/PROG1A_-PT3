@@ -230,6 +230,15 @@ public class MessageTest {
 
         assertEquals(expectedResult, actualResult);
         }
+        //Test for displaying Report
+        @Test
+        Public void testDisplayReport(){
+        Messages msg = new Messages("0000000001", 1, "+27834557896", "Did you get the cake?");
 
+        String report = "Hash: " + msg.createMessageHash() + ", Recipient: " + msg.getRecipient() + ", Message: " + msg.getMessageText();
 
+        String expectedResult = "Hash: " + msg.createMessageHash() + ", Recipient: " + "+27834557896" + ", Message: " + "Did you get the cake?";
+
+        assertEquals(expectedResult, report);
+    }
 }
