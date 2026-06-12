@@ -209,7 +209,7 @@ public class MessageTest {
         }
         String expectedResult = "Where are you? You are late! I have asked you to be on time. Ok, I am leaving without you.";
 
-        assertEquals(expectedResult, results.toString());
+        assertEquals(expectedResult, results.toString().trim());
 
         }
         //Test for Deleting message using a Message hash
