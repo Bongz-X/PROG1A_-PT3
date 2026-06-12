@@ -3,6 +3,8 @@ package poe;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+
 public class MessageTest {
 
     //Testing Message Length
@@ -151,5 +153,55 @@ public class MessageTest {
         String actualResult = sentMesssages.get(0).getMessageText() + ", " + sentMessages.get(1).getMessageText();
 
         assertEquals(expectedResult, actualResult);
+    }
+    //Test for displaying the longest Message
+    @Test
+    public void testDisplayLongestMessage(){
+        ArrayList<Messages> messages = new ArrayList<>();
+
+        messages.add(new Messages("0000000001", 1, "+27834557896", "Did you get the cake?"));
+
+        messages.add(new Messages("0000000002", 2, "+27838884567","Where are you? You are late! I have asked you to be on time."));
+
+        messages.add(new Messages("0000000003", 3, "+27834484567", "Yohoooo, I am at your gate."));
+
+        messages.add(new Messages("0000000004", 4, "0838884567", "It is dinner time!"));
+
+        Messages longest = message.get(0);
+
+        for(Messages msg : messages){
+            if (msg.getMessageText().length() > longest.getMessageText().length()){
+                longest = msg;
+            }
+        }
+        String expectedResult = "Where are you? You are late! I have asked you to be on time.";
+
+        assertEquals(expectedResult, longest.getMessageText());
+    }
+    // Test for search using Message ID
+    @Test
+    public void testSearchMessageID(){
+
+        Messages msg = new Messages("0838884567", 4, "0838884567", "It is dinner time!");
+
+        String expectedResult = "It is dinner time!";
+
+        String actualResult = msg.getMessageText();
+
+        assertEquals(expectedResult,actualResult);
+
+    }
+    //test for searching all messages for a particular recipient
+    @Test
+    public void testSearchByRecipient () {
+        ArrayList<Messagess> messages = new ArrayList<>();
+
+        messages.add(new Messages("0000000002", 2, "+27838884567", "Where are you? You are late! I have asked you to be on time."));
+
+        messages.add(new Messages("0000000005", 5, "+27838884567", "Ok, I am leaving without you."));
+
+        StringBuilder results = new StringBuilder();
+
+        for(Messages msg )
     }
 }
