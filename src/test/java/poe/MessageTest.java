@@ -202,6 +202,34 @@ public class MessageTest {
 
         StringBuilder results = new StringBuilder();
 
-        for(Messages msg )
-    }
+        for(Messages msg : messages){
+            if(msg.getRecipient().equals("+27838884567")){
+                results.append(msg.getMessageText()).append("");
+            }
+        }
+        String expectedResult = "Where are you? You are late! I have asked you to be on time. Ok, I am leaving without you.";
+
+        assertEquals(expectedResult, results.toString());
+
+        }
+        //Test for Deleting message using a Message hash
+        public void testDeleteMessageUsingHash(){
+        ArrayList<Messages> messages = new ArrayList<>();
+
+        Messages msg2 = new Messages("0000000002", 2, "+27838884567", "Where are you? You are late! I have asked you to be on time.");
+
+        messages.add(msg2);
+
+        String deletedMessage = msg2.getMessageText();
+
+        messages.remove (msg2);
+
+        String expectedResult = "Where are you? You are late! I have asked you to be on time. Successfully deleted.";
+
+        String actualResult = deletedMessage + " Successfully deleted.";
+
+        assertEquals(expectedResult, actualResult);
+        }
+
+
 }
